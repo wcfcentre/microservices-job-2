@@ -29,6 +29,8 @@ namespace TaxiBookingAPI
         {
 
             services.AddControllers();
+            services.AddDbContext<BookingDetailContext>(opt =>
+                                              opt.UseInMemoryDatabase("BookingDetailsList"));		          
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "TaxiBookingAPI", Version = "v1" });
